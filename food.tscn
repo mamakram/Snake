@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvpg7xvqixs23"]
+
+[ext_resource type="Script" path="res://Food.gd" id="1_4s30r"]
+[ext_resource type="Texture2D" uid="uid://1wl7drqcgn0t" path="res://Sprites/apple.png" id="2_ynhy4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb65a"]
+
+[node name="Food" type="Node2D" groups=["Food"]]
+light_mask = 16
+visibility_layer = 16
+position = Vector2(406, 315)
+script = ExtResource("1_4s30r")
+
+[node name="Apple" type="Sprite2D" parent="."]
+position = Vector2(0.5, -1.5)
+scale = Vector2(0.78125, 0.78125)
+texture = ExtResource("2_ynhy4")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+freeze = true
+freeze_mode = 1
+max_contacts_reported = 3
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_lb65a")
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
+[connection signal="body_exited" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_exited"]

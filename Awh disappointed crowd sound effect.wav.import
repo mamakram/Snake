@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpgyyofmo1kdh"
+path="res://.godot/imported/Awh disappointed crowd sound effect.wav-631432fdf2f016fa946f857eee186b71.sample"
+
+[deps]
+
+source_file="res://Awh disappointed crowd sound effect.wav"
+dest_files=["res://.godot/imported/Awh disappointed crowd sound effect.wav-631432fdf2f016fa946f857eee186b71.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://byd2jlbf1p5vc"]
+
+[ext_resource type="Script" path="res://Wall.gd" id="1_3krwf"]
+[ext_resource type="Texture2D" uid="uid://c8xsrc1iibdm8" path="res://Sprites/wall.png" id="1_rll0o"]
+
+[node name="Node2D" type="Node2D"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(128, 256)
+script = ExtResource("1_3krwf")
+
+[node name="Wall" type="Sprite2D" parent="."]
+texture = ExtResource("1_rll0o")

@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx5061x7hxjqq"]
+
+[ext_resource type="Script" path="res://Spider.gd" id="1_c5tfs"]
+[ext_resource type="Texture2D" uid="uid://le8c455e2wvi" path="res://Sprites/spider.png" id="2_y43pe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb65a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0cd0"]
+atlas = ExtResource("2_y43pe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xogdj"]
+atlas = ExtResource("2_y43pe")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3owpq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0cd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xogdj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Spider" type="Node2D" groups=["Food", "Spider"]]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(406, 315)
+script = ExtResource("1_c5tfs")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+light_mask = 16
+visibility_layer = 16
+freeze = true
+freeze_mode = 1
+max_contacts_reported = 3
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_lb65a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5.90086e-06, -5.90086e-06)
+scale = Vector2(0.960937, 0.960937)
+sprite_frames = SubResource("SpriteFrames_3owpq")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
+[connection signal="body_exited" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_exited"]

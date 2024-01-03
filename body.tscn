@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://b35si0swlo8sl"]
+
+[ext_resource type="Texture2D" uid="uid://c6td116oulcw3" path="res://Sprites/snek.png" id="1_5wvoc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekv55"]
+size = Vector2(26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdtmf"]
+atlas = ExtResource("1_5wvoc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3obr"]
+atlas = ExtResource("1_5wvoc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grtuq"]
+atlas = ExtResource("1_5wvoc")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf11e"]
+atlas = ExtResource("1_5wvoc")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkhbq"]
+atlas = ExtResource("1_5wvoc")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp2fa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdtmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3obr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grtuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf11e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkhbq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Body" type="Node2D" groups=["Body"]]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+freeze = true
+freeze_mode = 1
+max_contacts_reported = 1
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_ekv55")
+
+[node name="bodypart" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pp2fa")

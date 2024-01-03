@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://c60oyjpmtun8a"]
+
+[ext_resource type="Shader" path="res://node_2d.gdshader" id="1_i23ug"]
+[ext_resource type="Script" path="res://Menu.gd" id="1_yw8v3"]
+[ext_resource type="Texture2D" uid="uid://dllej8085a6k8" path="res://512x512_Dissolve_Noise_Texture2.png" id="2_jl5nu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vs2qw"]
+noise_type = 0
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e4t6m"]
+seamless = true
+noise = SubResource("FastNoiseLite_vs2qw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chrgb"]
+shader = ExtResource("1_i23ug")
+shader_parameter/strength = 0.056
+shader_parameter/noise = SubResource("NoiseTexture2D_e4t6m")
+
+[sub_resource type="SystemFont" id="SystemFont_ct3ax"]
+font_names = PackedStringArray("Calibri")
+oversampling = 4.0
+
+[node name="Root" type="Node2D" node_paths=PackedStringArray("level")]
+script = ExtResource("1_yw8v3")
+level = NodePath("Menu/MarginContainer/VBoxContainer/OptionButton")
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+modulate = Color(0.698039, 0.698039, 0.698039, 1)
+light_mask = 4
+visibility_layer = 4
+offset_right = 1156.0
+offset_bottom = 653.0
+color = Color(0.427451, 0.666667, 0.501961, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Menu/ColorRect"]
+top_level = true
+material = SubResource("ShaderMaterial_chrgb")
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 657.0
+mouse_filter = 2
+texture = ExtResource("2_jl5nu")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ct3ax")
+theme_override_font_sizes/font_size = 126
+text = "Snek"
+horizontal_alignment = 1
+
+[node name="play" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.521569, 0.0627451, 1)
+theme_override_colors/font_hover_color = Color(0, 0.207843, 0, 1)
+text = "Play"
+
+[node name="OptionButton" type="OptionButton" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/modulate_arrow = 0
+alignment = 1
+item_count = 3
+selected = 0
+popup/item_0/text = "        Level 1"
+popup/item_0/id = 0
+popup/item_1/text = "        Level 2"
+popup/item_1/id = 1
+popup/item_2/text = "        Level 3"
+popup/item_2/id = 2
+
+[node name="quit" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.54902, 0, 0.0784314, 1)
+theme_override_colors/font_hover_color = Color(0.254902, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 0
+text = "Quit"
+
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/play" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/quit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

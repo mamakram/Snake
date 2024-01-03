@@ -1,0 +1,143 @@
+[gd_scene load_steps=2 format=3 uid="uid://drd17vd47fvql"]
+
+[ext_resource type="PackedScene" uid="uid://byd2jlbf1p5vc" path="res://wall.tscn" id="1_ehwix"]
+
+[node name="Node2D18" type="Node2D"]
+
+[node name="Wall 6" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(272, 592)
+
+[node name="Wall 4" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(80, 432)
+
+[node name="Wall 7" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(80, 528)
+
+[node name="Wall 3" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(144, 592)
+
+[node name="Wall 8" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(80, 464)
+
+[node name="Wall 9" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(176, 592)
+
+[node name="Wall 10" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(240, 592)
+
+[node name="Wall 11" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(112, 592)
+
+[node name="Wall 12" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(80, 560)
+
+[node name="Wall 13" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(80, 336)
+
+[node name="Wall 14" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(112, 560)
+
+[node name="Wall 15" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(80, 496)
+
+[node name="Wall 16" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(208, 592)
+
+[node name="Wall" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(80, 304)
+
+[node name="Wall 2" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(80, 400)
+
+[node name="Wall 17" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(880, 592)
+
+[node name="Wall 18" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(432, 592)
+
+[node name="Wall 19" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(336, 592)
+
+[node name="Wall 20" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(752, 592)
+
+[node name="Wall 21" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(400, 592)
+
+[node name="Wall 22" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(720, 592)
+
+[node name="Wall 23" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(656, 592)
+
+[node name="Wall 24" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(464, 592)
+
+[node name="Wall 25" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(304, 592)
+
+[node name="Wall 26" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(496, 592)
+
+[node name="Wall 27" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(848, 592)
+
+[node name="Wall 28" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(368, 592)
+
+[node name="Wall 29" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(784, 592)
+
+[node name="Wall 30" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(688, 592)
+
+[node name="Wall 31" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(944, 592)
+
+[node name="Wall 32" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(912, 592)
+
+[node name="Wall 33" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(816, 592)
+
+[node name="Wall 34" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1008, 592)
+
+[node name="Wall 35" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(976, 592)
+
+[node name="Wall 36" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1040, 592)
+
+[node name="Wall 37" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1040, 560)
+
+[node name="Wall 38" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1072, 560)
+
+[node name="Wall 39" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1072, 528)
+
+[node name="Wall 40" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1072, 496)
+
+[node name="Wall 41" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1072, 464)
+
+[node name="Wall 42" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1072, 432)
+
+[node name="Wall 43" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1072, 400)
+
+[node name="Wall 44" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1072, 368)
+
+[node name="Wall 45" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1072, 336)
+
+[node name="Wall 46" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(1072, 304)
+
+[node name="Wall 5" parent="." instance=ExtResource("1_ehwix")]
+position = Vector2(80, 368)
